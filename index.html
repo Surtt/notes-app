@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <main class="container">
+    <section class="sidebar categories">
+      <a class="sidebar__logo">Notes App</a>
+      <ul class="list all">
+        <li class="list_item">All<span class="list__item-count">12</span></li>
+      </ul>
+      <ul class="list unsorted">
+        <li class="list_item">Unsorted<span class="list__item-count">3</span></li>
+      </ul>
+      <ul class="list my-list">
+        <li class="list__item">SICP<span class="list__item-count">2</span></li>
+        <li class="list__item">Development<span class="list__item-count">4</span></li>
+        <li class="list__item">History<span class="list__item-count">1</span></li>
+      </ul>
+      <ul class="list deleted">
+        <li class="list__item">Deleted<span class="list__item-count">2</span></li>
+      </ul>
+    </section>
+    <section class="sidebar notes">
+      <article class="notes__item">
+        <h3 class="notes__title">Abstractions with Functions</h3>
+        <p class="notes__description">One kind of statement you might type is an expression statement, which consists of
+          an expression followed by a semicolon. One kind of primitive expression is a number.</p>
+        <div class="notes__info"><time datetime="2021-09-06">06.09.2021</time></div>
+      </article>
+      <article class="notes__item">
+        <h3 class="notes__title">Abstractions with Data</h3>
+        <p class="notes__description">Suppose we want to do arithmetic with rational numbers. We want to be able to add,
+          subtract, multiply, and divide them and to test whether two rational numbers are equal.</p>
+        <div class="notes__info"><time datetime="2021-09-07"></time>07.09.2021</time></div>
+      </article>
+    </section>
+    <section class="content">
+      <form class="content__form form" action="">
+        <label for="title">
+          Add title
+          <input id="title" type="text" class="form__input">
+        </label>
+        <label for="textarea">
+          Add text
+          <textarea id="textarea"></textarea>
+        </label>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>
