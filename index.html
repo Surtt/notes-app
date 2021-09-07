@@ -131,7 +131,7 @@
       <div class="content__search search">
         <input class="search__input" type="text" placeholder="Search">
       </div>
-      <article class="content__item">
+      <article class="content__item content__item--active">
         <h3 class="content__title">Abstractions with Functions</h3>
         <p class="content__description">One kind of statement you might type is an expression statement, which consists
           of
@@ -149,14 +149,14 @@
 
     <aside class="column notes">
       <form class="notes__form form" action="">
-        <label for="title">
+        <label class="form__label" for="title">
           Add title
-          <input id="title" type="text" class="form__input">
         </label>
-        <label for="textarea">
+        <input class="form__input" id="title" type="text" placeholder="Add title here">
+        <label class="form__label" for="textarea">
           Add text
-          <textarea id="textarea"></textarea>
         </label>
+        <textarea class="form__textarea" id="textarea" cols="30" placeholder="Add text here"></textarea>
       </form>
     </aside>
   </div>
