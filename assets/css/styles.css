@@ -44,7 +44,6 @@
 }
 
 body {
-  height: 100vh;
   font-family: var(--body-font);
   background-color: hsl(var(--bg-color));
   font-size: var(--normal-fs);
@@ -72,8 +71,7 @@ img{
 .container {
   display: flex;
   flex-direction: row;
-  height: 100%;
-  margin: auto;
+  min-height: 100vh;
 }
 
 .column {
@@ -96,6 +94,11 @@ img{
   width: 18%;
   min-width: 230px;
   background-color: var(--categories-bg-color);
+}
+
+#list__toggle,
+.list__btn {
+  display: none;
 }
 
 .list__item-wrapper {
@@ -205,6 +208,7 @@ img{
 .form {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .form__label {
@@ -238,5 +242,100 @@ img{
 }
 
 .form__textarea {
+  flex-grow: 1;
   resize: none;
 }
+
+
+/*========== MEDIA QUERIES ==========*/
+@media screen and (max-width: 667px){
+  .container {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .column {
+    width: 100%;
+    max-width: 100%;
+    border-right: none;
+  }
+
+  .column__list-box {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    width: 100%;
+    background-color: #292929;
+    margin-top: 4.2rem;
+    padding: .5rem 0;
+  }
+
+  .list__btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .list__btn > span,
+  .list__btn > span::before,
+  .list__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+  }
+  
+  .list__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+
+  .list__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  #list__toggle:checked ~ .list__btn > span {
+    transform: rotate(45deg);
+  }
+
+  #list__toggle:checked ~ .list__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  #list__toggle:checked ~ .list__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  #list__toggle:checked ~ .column__list-box {
+    visibility: visible;
+    left: 0;
+  }
+
+  .list__btn > span,
+  .list__btn > span::before,
+  .list__btn > span::after {
+    transition-duration: .25s;
+  }
+
+  .notes {
+    display: flex;
+  }
+
+  .notes__form {
+    flex-grow: 1;
+    height: auto;
+  }
+}
+
